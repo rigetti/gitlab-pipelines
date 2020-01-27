@@ -13,9 +13,12 @@ To take advantage of the Docker-related job templates, add the following to the 
 
 ```yaml
 include:
-  - project: rigetti/gitlab-pipelines
+  - project: rigetti/forest/gitlab-pipelines
     file: docker.gitlab-ci.yml
 ```
+
+**NOTE**: There is an additional `forest` directory included in the project path, as the
+GitLab mirror version of the repository is used by the `include` keyword.
 
 To use the Docker-related templates (`.docker-branch`, `.docker-edge`, `.docker-stable`), add
 the following entries to the YAML:
@@ -36,9 +39,9 @@ to the `include` section of the `gitlab-ci.yml`:
 
 ```yaml
 include:
-  - project: rigetti/gitlab-pipelines
+  - project: rigetti/forest/gitlab-pipelines
     file: docker.gitlab-ci.yml
-  - project: rigetti/gitlab-pipelines
+  - project: rigetti/forest/gitlab-pipelines
     file: python.gitlab-ci.yml
 ```
 
