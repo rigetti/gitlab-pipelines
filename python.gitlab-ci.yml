@@ -1,0 +1,7 @@
+.python:
+  image: python:3.7
+  tags:
+    - github
+  before_script:
+    - make install
+    - make requirements
