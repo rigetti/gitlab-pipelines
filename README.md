@@ -34,7 +34,16 @@ docker-stable:
   extends: .docker-stable
 ```
 
-To additionally take advantage of the Python-related job templates, add an additional entry
+In addition to providing those job entries, the jobs themselves depend on the existence of an
+`IMAGE` variable to operate correctly. This name of the desired Docker image, which will be
+built as part of the CI pipeline. For example, pyQuil has the following `variables`:
+
+```yaml
+variables:
+  IMAGE: rigetti/forest
+```
+
+To also take advantage of the Python-related job templates, add the following additional entry
 to the `include` section of the `gitlab-ci.yml`:
 
 ```yaml
